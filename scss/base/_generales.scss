@@ -10,3 +10,13 @@ body {
     background-color: #1E1E1E;
     color: #FFFFFF;
 }
+.nav-link{
+    font-weight: bold;
+    padding: 10px;
+    transition: 1s;
+    &:hover{
+        background-color: black;
+        color: white;
+        transform: scale(1.1);
+    }
+}

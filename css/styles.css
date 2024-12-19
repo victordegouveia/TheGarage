@@ -13,6 +13,17 @@ body {
   color: #FFFFFF;
 }
 
+.nav-link {
+  font-weight: bold;
+  padding: 10px;
+  transition: 1s;
+}
+.nav-link:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.1);
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -137,6 +148,10 @@ footer a {
   align-items: center;
   margin: 10px;
   display: flex;
+  transition: 1s;
+}
+footer a:hover {
+  transform: translateY(-10px);
 }
 footer a img {
   width: 20px;
