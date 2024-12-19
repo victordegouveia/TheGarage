@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
@@ -6,109 +8,89 @@ body {
     color: #FFFFFF;
 }
 
-header {
+@mixin flex-container($align: center, $justify: center) {
     display: flex;
-    text-decoration: none;
-    align-items: center;
-    justify-content: space-around;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin text-styles($color, $font-weight: normal, $text-decoration: none) {
+    color: $color;
+    font-weight: $font-weight;
+    text-decoration: $text-decoration;
+}
+
+header {
+    @include flex-container(space-around, center);
+    @include text-styles(#ECF0F1, bold);
     background-color: #FFCC00;
-    color: #ECF0F1;
     background-size: cover;
     list-style: none;
 }
 
-ul {
-    display: flex;
-    background-color: #FFCC00;
-    justify-content: space-evenly;
-    list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-
 .container-fluid {
-    display: flex;
+    @include flex-container(space-evenly);
     background-color: #FFCC00;
-    justify-content: space-evenly;
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 
 .nav-link {
-    display: flex;
-    justify-content: space-evenly;
+    @include flex-container(space-evenly);
     list-style: none;
-    font-family:Arial, Helvetica, sans-serif ;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 
-iframe {
-    margin-left: 27%;
-}
-
+iframe,
 .contactanos {
     margin-left: 27%;
 }
 
-.subtitulo {
-    text-align: center;
-}
-
+.subtitulo,
 .slogan {
     text-align: center;
 }
 
 .columnas {
-    display:flex;
-    justify-content: space-evenly;
+    @include flex-container(space-evenly);
     margin-top: 50px;
 }
 
 .columnas-de-texto {
     width: 100%;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin: 0 25px;
+}
+
+h1,
+h2,
+h3 {
+    background-color: #FFCC00;
+    color: #1E1E1E;
+    margin: auto;
+    text-align: center;
+    border-color: #FFCC00;
+    border-style: solid;
+    border-radius: 5px;
 }
 
 h1 {
-    background-color: #FFCC00;
-    color: #1E1E1E;
     width: 190px;
-    margin: auto;
     margin-top: 20px;
-    text-align: center;
-    border-width: 0px;
-    border-color: #FFCC00;
-    border-style: solid;
-    border-radius: 10px;
+    border-width: 0;
 }
 
 h2 {
-    background: #FFCC00;
-    color: #1E1E1E;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
     width: 200px;
-    text-align: center;
+    margin: 50px auto;
     border-width: 4px;
-    border-color: #FFCC00;
-    border-style: solid;
-    border-radius: 5px;
 }
 
 h3 {
-    background: #FFCC00;
-    color: #1E1E1E;
-    margin: auto;
-    margin-top: 10px;
     width: 50px;
-    text-align: center;
+    margin-top: 10px;
     border-width: 4px;
-    border-color: #FFCC00;
-    border-style: solid;
-    border-radius: 5px;
 }
 
 input {
@@ -127,13 +109,10 @@ a {
 
 .enunciado {
     font-weight: bold;
-    text-decoration-line:underline;
+    text-decoration-line: underline;
 }
 
-i {
-    color: #ECF0F1;
-}
-
+i,
 p {
     color: #ECF0F1;
 }

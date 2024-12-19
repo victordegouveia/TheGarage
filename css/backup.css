@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
@@ -17,15 +22,6 @@ header {
     color: #ECF0F1;
     background-size: cover;
     list-style: none;
-}
-
-ul {
-    display: flex;
-    background-color: #FFCC00;
-    justify-content: space-evenly;
-    list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
 }
 
 .container-fluid {
@@ -131,9 +127,13 @@ a {
     font-weight: bold;
     text-decoration-line:underline;
 }
-
-i {
+footer{
+    display: flex;
+}
+footer a {
     color: #ECF0F1;
+    justify-content: center;
+    align-items: center;
 }
 
 p {

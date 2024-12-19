@@ -1,3 +1,145 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+}
+
+header {
+  display: flex;
+  align-items: space-around;
+  justify-content: center;
+  color: #ECF0F1;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #FFCC00;
+  background-size: cover;
+  list-style: none;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: space-evenly;
+  justify-content: center;
+  background-color: #FFCC00;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.nav-link {
+  display: flex;
+  align-items: space-evenly;
+  justify-content: center;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+iframe,
+.contactanos {
+  margin-left: 27%;
+}
+
+.subtitulo,
+.slogan {
+  text-align: center;
+}
+
+.columnas {
+  display: flex;
+  align-items: space-evenly;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.columnas-de-texto {
+  width: 100%;
+  margin: 0 25px;
+}
+
+h1,
+h2,
+h3 {
+  background-color: #FFCC00;
+  color: #1E1E1E;
+  margin: auto;
+  text-align: center;
+  border-color: #FFCC00;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+h1 {
+  width: 190px;
+  margin-top: 20px;
+  border-width: 0;
+}
+
+h2 {
+  width: 200px;
+  margin: 50px auto;
+  border-width: 4px;
+}
+
+h3 {
+  width: 50px;
+  margin-top: 10px;
+  border-width: 4px;
+}
+
+input {
+  margin: 5px;
+  padding: 6px 9px;
+  border: none;
+  border-top: 1px solid black;
+  background: whitesmoke;
+}
+
+a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+
+.enunciado {
+  font-weight: bold;
+  text-decoration-line: underline;
+}
+
+i,
+p {
+  color: #ECF0F1;
+}
+
+footer {
+  display: flex;
+}
+footer a {
+  color: #ECF0F1;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  display: flex;
+}
+footer a img {
+  width: 20px;
+}
 
 /*# sourceMappingURL=styles.css.map */
