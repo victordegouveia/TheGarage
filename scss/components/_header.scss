@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+// Configuración base
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
     font-style: normal;
     background-color: #1E1E1E;
     color: #FFFFFF;
+    margin: 0;
+    padding: 0;
 }
 
-@mixin flex-container($align: center, $justify: center) {
+// Mixins reutilizables
+@mixin flex-container($align: center, $justify: center, $direction: row) {
     display: flex;
     align-items: $align;
     justify-content: $justify;
+    flex-direction: $direction;
 }
 
 @mixin text-styles($color, $font-weight: normal, $text-decoration: none) {
@@ -20,100 +25,131 @@ body {
     text-decoration: $text-decoration;
 }
 
+// Header
 header {
-    @include flex-container(space-around, center);
-    @include text-styles(#ECF0F1, bold);
+    @include flex-container(center, space-between, row);
     background-color: #FFCC00;
-    background-size: cover;
-    list-style: none;
+    padding: 20px;
+
+    h1, h2, h3 {
+        background-color: inherit;
+        color: #1E1E1E;
+        text-align: center;
+        border: 2px solid #FFCC00;
+        border-radius: 5px;
+        margin: 10px auto;
+        padding: 5px;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
 }
 
+// Contenedor principal
 .container-fluid {
-    @include flex-container(space-evenly);
+    @include flex-container(center, space-around, row);
     background-color: #FFCC00;
-    list-style: none;
+    padding: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 
+// Enlaces de navegación
 .nav-link {
-    @include flex-container(space-evenly);
-    list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    @include text-styles(#1E1E1E, bold);
+    padding: 10px;
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: #FFCC00;
+        background-color: #1E1E1E;
+        border-radius: 5px;
+    }
 }
 
-iframe,
-.contactanos {
-    margin-left: 27%;
+// Sección principal
+main {
+    .subtitulo, .slogan {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1.5rem;
+    }
+
+    .columnas {
+        @include flex-container(center, space-around, row);
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .columnas-de-texto {
+        width: 30%; /* Espaciado para ordenadores */
+        margin: 10px;
+        padding: 15px;
+        background: #333333;
+        border-radius: 5px;
+    }
 }
 
-.subtitulo,
-.slogan {
-    text-align: center;
-    margin-top: 50px
-}
-
-.columnas {
-    @include flex-container(space-evenly);
-    margin-top: 50px;
-}
-
-.columnas-de-texto {
-    width: 100%;
-    margin: 0 25px;
-}
-
-h1,
-h2,
-h3 {
+// Footer
+footer {
+    @include flex-container(center, space-around, row);
     background-color: #FFCC00;
-    color: #1E1E1E;
-    margin: auto;
-    text-align: center;
-    border-color: #FFCC00;
-    border-style: solid;
-    border-radius: 5px;
+    padding: 20px;
+
+    a {
+        margin: 0 10px;
+        @include text-styles(#1E1E1E, bold);
+        transition: all 0.3s ease-in-out;
+
+        img {
+            width: 30px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
 }
 
-h1 {
-    width: 190px;
-    margin-top: 20px;
-    border-width: 0;
+// Estilos responsivos
+@mixin responsive($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
 }
 
-h2 {
-    width: 200px;
-    margin: 50px auto;
-    border-width: 4px;
+@include responsive(1024px) {
+    .columnas-de-texto { width: 45%; } /* Ajuste para tablets */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.2rem; }
 }
 
-h3 {
-    width: 50px;
-    margin-top: 10px;
-    border-width: 4px;
-}
+@include responsive(768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
 
-input {
-    margin: 5px;
-    padding: 6px 9px;
-    border: none;
-    border-top: 1px solid black;
-    background: whitesmoke;
-}
+    .container-fluid {
+        flex-direction: column;
+        padding: 10px;
+    }
 
-a {
-    display: flex;
-    text-decoration: none;
-    color: black;
-}
+    .columnas {
+        flex-direction: column;
+    }
 
-.enunciado {
-    font-weight: bold;
-    text-decoration-line: underline;
-}
+    .columnas-de-texto {
+        width: 90%; /* Ancho completo para móviles */
+    }
 
-i,
-p {
-    color: #ECF0F1;
+    .nav-link {
+        font-size: 1rem;
+        padding: 8px;
+    }
 }
